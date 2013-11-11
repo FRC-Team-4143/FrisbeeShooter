@@ -1,0 +1,9 @@
+# Mac stuff
+.DS_Store
+
+# Java
+*.class
+
+# FRC Stuff
+/build/
+/nbproject/private/
