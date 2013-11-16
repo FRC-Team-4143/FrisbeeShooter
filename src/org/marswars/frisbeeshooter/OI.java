@@ -3,7 +3,9 @@ package org.marswars.frisbeeshooter;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.marswars.frisbeeshooter.XboxController;
+import org.marswars.frisbeeshooter.commands.ShootFrisbee;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -46,6 +48,9 @@ public class OI {
     
     public OI() {
         xbox = new XboxController(RobotMap.xboxControllerPort);
+        // new JoystickButton(xbox, XboxController.ButtonType.kA.value).whileHeld(new ShootFrisbee());
+        
+        
     }
     
 }

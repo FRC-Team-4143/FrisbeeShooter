@@ -8,11 +8,15 @@
 package org.marswars.frisbeeshooter;
 
 
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.buttons.Trigger;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.marswars.frisbeeshooter.commands.CommandBase;
 import org.marswars.frisbeeshooter.commands.DriveWithController;
+import org.marswars.frisbeeshooter.commands.ShootFrisbee;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -50,8 +54,11 @@ public class FrisbeeShooter extends IterativeRobot {
     }
 
     public void teleopInit() {
-	Command driveTrainControls = new DriveWithController();
+	Command driveTrainControls = new DriveWithController();        
         driveTrainControls.start();
+        Command shooterControls = new ShootFrisbee();        
+        shooterControls.start();
+        
     }
 
     /**
@@ -59,5 +66,7 @@ public class FrisbeeShooter extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putNumber("Trigger", CommandBase.oi.xbox.getThrottle());       
+        
     }
 }

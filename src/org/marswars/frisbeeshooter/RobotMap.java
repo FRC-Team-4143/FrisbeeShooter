@@ -17,9 +17,9 @@ public class RobotMap {
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
     
-    public static final int leftSpeedController = 1;
+    public static final int leftSpeedController = 1; 
     public static final int rightSpeedController = 6;
-    
+    public static final int victorMotorController1 = 2; //need to check
     public static final int xboxControllerPort = 1;
 
 }
